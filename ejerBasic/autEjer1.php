@@ -11,7 +11,10 @@
     echo "Y = " . $y . "<br>";
     echo "<hr>";
 
-    echo "X + Y = " . $x + $y . "<br>";
-    echo "X - Y = " . $x - $y . "<br>";
+    $suma = $x + $y;
+    $resta = $x - $y;
+
+    echo "X + Y = " . $suma . "<br>";
+    echo "X - Y = " . $resta . "<br>";
     echo "X * Y = " . $x * $y . "<br>";
     echo "X / Y = " . $x / $y . "<br>";
