@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    echo "------->" . $_SESSION["contador"];
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +16,7 @@
     por pantalla.
     -->
 
-    <?php
-    session_start();
-    echo "------->" . $_SESSION["contador"];
     
-    ?>
 
     <form name="miformu" action="autEjer9.php" method="post">
 
