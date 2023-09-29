@@ -15,10 +15,12 @@
 
         $contador = 0;
         for ($i=0; $i < strlen($cadena); $i++) { 
-            if(strcmp($arrayA[$i], $arrayB[$i]) == 0){
-                $contador++;
+            for ($e = strlen($cadena) -1; $e >= 0; $e--) { 
+                if(strcmp($arrayA[$i], $arrayB[$e]) == 0){
+                    $contador++;
+                }
             }
-
+            break;
         }
 
         echo "<br><hr>";
