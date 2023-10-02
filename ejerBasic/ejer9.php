@@ -1,7 +1,7 @@
 <?php
     session_start();
-    echo "------->" . $_SESSION["contador"];
-    
+    echo "------->" . $_SESSION["contador"]++;
+
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,17 +16,12 @@
     por pantalla.
     -->
 
-    
-
     <form name="miformu" action="autEjer9.php" method="post">
 
         <p>
             <label for='nombre'>nombre :</label>
             <input type='String' name='nombre' id='Titulo' required>
-
-            </p>
-            
-        
+        </p>
 
         <input type="submit" name="envio" value="Enviar">
         

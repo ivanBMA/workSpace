@@ -1,18 +1,18 @@
 <?php
 
     session_start();
-    $_SESSION["contador"]++;
     $contadorA = $_SESSION["contador"];
-
-    $_SESSION[$array];
-    
+    $_SESSION["nombres"];
 
     if(isset($_POST["nombre"]) && !empty($_POST["nombre"])){
-        $_SESSION[$array[ $contadorA]] = $_POST["nombre"];
-
-
-        if($contadorA >= 5){
-            var_dump($_SESSION[$array]);
+        $_SESSION["nombres"] = $_SESSION["nombres"]. $_POST["nombre"] . ",";
+        
+        if($contadorA == 5){
+            echo $_SESSION["nombres"];
+            $nombres = explode(",", $_SESSION["nombres"]);
+            foreach ($nombres as $value) {
+               echo "<br>nombre " . $value;
+            }
             session_destroy();
         }else{
             $contadorA++;
@@ -20,3 +20,4 @@
         }
            
     }
+    
