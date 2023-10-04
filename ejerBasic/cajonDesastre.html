@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encuesta Usuarios</h1>
+    <h3>Lenguajes de programacion - RadioButton</h3>
+    <form name="miformu" action="autCajonDesastre.php" method="post">
+
+        <label for="icss">Lenguaje CSS</label>
+        <input type="radio" name="lprog" value="css" id="icss">
+        <label for="ihtml">Lenguaje html</label>
+        <input type="radio" name="lprog" value="html" id="ihtml">
+        <!--El cheked lo que hace es dejar un radio seleccionador por defecto-->
+        <label for="iphp">Lenguaje php</label>
+        <input type="radio" name="lprog" value="php" id="iphp" checked>
+        <label for='nombre'>nombre :</label>
+        <input type='String' name='nombre' id='Titulo' required>
+
+        <h3>Medio de transporte - CheckBox</h3>
+
+        <label for='nombre'>autobus :</label>
+        <input type="checkbox" name="nTrans[]" id="iBus" value="autobus" checked>
+        <label for='nombre'>tranVia :</label>
+        <input type="checkbox" name="nTrans[]" id="iTranVia" value="tranVia">
+        <label for='nombre'>coche :</label>
+        <input type="checkbox" name="nTrans[]" id="iCoche" value="coche">
+
+        <h3>Equipo de fultbol - Select</h3>
+
+        <select name="sFutbol" id="">
+            <option value="Real zaragoza">Real zaragoza</option>
+            <option value="Sporting de Gijon">Sporting de Gijon</option>
+            <option value="Huesca">Huesca</option>
+            <option value="AC Milan">AC Milan</option>
+        </select>
+
+        <hr>
+        <br>
+        <input type="submit" name="envio" value="Enviar">
+    </form>
+</body>
+</html>
