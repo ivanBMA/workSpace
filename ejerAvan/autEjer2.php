@@ -1,14 +1,20 @@
 <?php
    
-    if(isset($_POST["numeroA"]) && !empty($_POST["numeroA"])){
-        if(isset($_POST["numeroB"]) && !empty($_POST["numeroB"])){
-
+    if(isset($_POST["envio"]) && !empty($_POST["envio"])){
             $numeroA = $_POST["numeroA"];
             $numeroB = $_POST["numeroB"];
-            if($numeroA == 1 ){
-                echo "no se puede realizar la operación,introduzca otro numero diferente";
+        /*
+            echo "no se puede realizar la operacion,introduzca otro numero diferente";
             }else {
                 echo $numeroA . " / " . $numeroB . " = " . ($numeroA / $numeroB);
+            } */
+
+            try{
+                throw new Exception("El divisor es cero");
+
+            }catch(Exception $e){
+                echo "Se ha producido una excepcion " . $e->getMessage();
+            }finally{
+                echo "<br>Esto siempre se ejecuta.";
             }
-        }   
     }

@@ -1,8 +1,8 @@
 <?php
     if(isset($_POST["nombre"]) && !empty($_POST["nombre"])){
         if($_POST["nombre"] == "admin"){
-            echo "Hola señor admin " . $_POST["nombre"];
+            echo "Hola senor admin " . $_POST["nombre"];
         }else {
-            echo "Hola señor usuario " . $_POST["nombre"];
+            header("Location: http://127.0.0.1/workSpace/ejerBasic/ejercicioAdmin.html");
         }
     }
