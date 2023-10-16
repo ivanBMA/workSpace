@@ -98,6 +98,7 @@
                         if (isset($_POST["deportes"]) && !empty($_POST["deportes"])) {
                             $contieneN = false;
                             foreach ($_POST["deportes"] as  $value) {
+                                //strpos($value, "n") contiene la n true o false.
                                 if(strpos($value, "n")){
                                     $contieneN = true;
                                 }

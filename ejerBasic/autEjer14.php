@@ -36,9 +36,9 @@
         //Mustro el resultado.
         echo "<br><hr>";
         if($contador == strlen($cadena)){
-            echo "<h4>la pabra '" . $cadena . "' es palindroma.<h4>";
+            echo "<h4 tyle=\"color:blue\">la pabra '" . $cadena . "' es palindroma.<h4>";
         }else {
-            echo "<h4>La pabra " . $cadena . " no es palindroma.<h4>";
+            echo "<h4 style=\"color:red\">La pabra " . $cadena . " no es palindroma.<h4>";
         }
 
     }
