@@ -31,7 +31,7 @@
             }
             
         }
-
+        
 
         //Mustro el resultado.
         echo "<br><hr>";
