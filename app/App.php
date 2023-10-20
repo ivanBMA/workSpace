@@ -57,13 +57,39 @@ Index (index). Presentación de la App y enlaces.
             }
         }
 
+        function esPrimo($params) {
+            $resultado = true;
+            if ($params == 1) {
+                $resultado =  false;
+            }else{
+                for ($i = 2; $i < $params; $i++) {
+                    if ($params % $i === 0) {
+                        return $resultado =  false;
+                    }
+                }
+            }
+           
+
+            return $resultado;
+        }
+
         function primos(){
             $numerosPrimos = array();
 
-            for ($i=0;$i < 10000; $i++){ 
-                if ($i % 2 != 0) {
-                    
-                }else {
+            for ($i=0;$i < 10000; $i++){
+                //-----------------------------------
+                $resultado = true;
+                if ($i == 1) {
+                    $resultado =  false;
+                }else{
+                    for ($i = 2; $i < $i; $i++) {
+                        if ($i % $i === 0) {
+                            return $resultado =  false;
+                        }
+                    }
+                }
+                //-----------------------------------
+                if ($resultado == true) {
                     array_push($numerosPrimos,$i);
                 }
             }
