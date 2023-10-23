@@ -57,6 +57,26 @@ Index (index). Presentación de la App y enlaces.
             }
         }
 
+        function potencias(){
+            $array = array();
+            for ($i=0; $i <= 11 ; $i++) { 
+                $array[] = 2**$i;
+            }
+            //$this->mostrarArray($array);
+            $this->mostrarArrayA($array,"potencias2");
+
+        }
+
+        function mostrarArray($arrayMostrar){
+            foreach ($arrayMostrar as $value) {
+                echo $value . "<br>";
+            }
+        }
+
+        function mostrarArrayA($arrayMostrar,$nombreFuncion){
+            include "vistas/matematicas.php";
+        }
+
         function esPrimo($params) {
             $resultado = true;
             if ($params == 1) {
@@ -102,6 +122,67 @@ Index (index). Presentación de la App y enlaces.
         function login(){
             //Mostrar pantalla de login
             echo "<br>Aqui pondriamos el Login";
+        }
+
+        function version(){
+            session_start();
+            include('vistas/sesion.php');
+            /*
+            echo "Ver contenido de las cookies<br>";
+            echo "<pre>";
+            var_dump($_COOKIE);
+            echo "<pre>";
+
+            echo "<hr>";
+
+            echo "Ver contenido de la sesion<br>";
+            echo "<pre>";
+            var_dump($_SESSION);
+            echo "<pre>";
+        */
+        }
+        
+        function guardarSesion(){
+            session_start();
+            $lista = $_SESSION['deseos'];
+            $lista[] = $_POST['deseoA'];
+            $_SESSION['deseos'] = $lista;
+            header('Location: http://127.0.0.1/workSpace/App/?method=version');
+            /*
+            $deseo = $_POST['deseoA'];
+            $_SESSION['deseo'] = $_POST['deseoA'];
+            echo "sesion " . $_SESSION['deseo'];
+            echo "<hr>post  " . $deseo;
+
+            if(isset($_SESSION['deseos'])){
+                $deseos = $_SESSION['deseos'];
+            }else {
+                $deseos = array();
+            }
+            */
+            //$deseos[] = $_POST['deseo'];
+            //header('Location: http://127.0.0.1/workSpace/App/?method=version');
+        }
+
+        function borrarSesion(){
+            sesion_start();
+            if (!empty($_SESSION['deseos'])) {
+            $datos = json_encode($_SESSION['deseos']);
+            setcookie(session_name(),$datos,time()-720000);//Caduco la cookie asociada a la sesion
+            unset($_SESSION);//Elimina los datos asociados a la sesion
+            session_destroy();//Elimina toda la informacion de sesion del servidor
+            header('Location: http://127.0.0.1/workSpace/App/?method=version');
+            }else {
+                header('Location: http://127.0.0.1/workSpace/App/?method=version');
+            }
+        }
+
+        function eliminar(){
+            session_start();
+            $identificador = $_GET["id"];
+            unset($_SESSION['deseo'][$identificador]);
+            //header('Location: http://127.0.0.1/workSpace/App/?method=version');
+
         }
     }
     

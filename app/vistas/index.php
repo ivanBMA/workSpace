@@ -22,9 +22,11 @@ cálculo del array, por ejemplo: esPrimo(). Los métodos necesarios son:
     <h3>Enlaces</h3>
     <ul>
         <li><a href="../App?method=fibonachi">Fibonachi</a></li>
-            <li><a href="/ejemplos/18?method=login">potencias2</a></li>
+        <li><a href="../App?method=potencias">potencias2</a></li>
         <li><a href="../App?method=factoriales">factoriales</a></li>
         <li><a href="../App?method=primos">primos</a></li>
+        <li><a href="../App?method=version">ver contenido de la secion</a></li>
+
     </ul>
 </body>
 </html>
