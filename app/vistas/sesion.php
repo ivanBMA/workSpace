@@ -7,17 +7,12 @@
 </head>
 <body>
     <h1>Vamos a ver el contenido de mi sesion</h1>
-    <pre>
-        <?php
-            var_dump($_SESSION);
-        ?>
-    </pre>
     <h2>Infomracion de la sesion</h2>
     <h3>Ultimo deseo</h3>
     <p>
         <?php
             if (isset($_SESSION['deseo'])) {
-                echo $_SESSION['deseo'];
+               var_dump($_SESSION);
             }else{
                 echo "no hay nigun deseo todavia";
             }
@@ -28,8 +23,8 @@
     <h3>Lista de todos los deseos</h3>
     <ul>
     <?php
-        if (isset($_SESSION['deseos'])) {
-            foreach ($_SESSION['deseos'] as $value) {
+        if (isset($_SESSION['deseo'])) {
+            foreach ($_SESSION['deseo'] as $value) {
                 echo "<li>" . $value . "</li>";
                 ?>
                     <a href="../App?method=eliminar">Borrar sesion</a>
@@ -40,12 +35,12 @@
         }
     ?>
     </ul>
-    <a href="../App?method=borrarSesion">Borrar sesion</a>
+    <a href="../App/?method=borrarSesion">Borrar sesion</a>
 
     <h2>Formulario de deseo</h2>
-    <form action="../App?method=guardarSesion" method="post">
+    <form action="../App/?method=guardarSesion" method="post">
         <label for="">nombre: </label>
-        <input type="text" name="deseoA" id="">
+        <input type="text" name="deseo" id="">
 
         <input type="submit" name="envio" value="Enviar">
     </form>
