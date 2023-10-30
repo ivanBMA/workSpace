@@ -1,5 +1,5 @@
 <?php
-    echo "<h1>Contenido publico</h1>";
+    echo "<h1>Contenido publico indexPublic</h1>";
     require "../start.php";
 
 
