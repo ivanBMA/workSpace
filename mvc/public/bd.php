@@ -39,13 +39,21 @@
             echo "| telephone " . $row["telephone"] . "<br><hr>";
             $contador++; 
         }
-
+        
         echo "<h2>Filas devueltas ".$contador." </h2>";
         
         $sqlInsertar = "INSERT INTO 'testclient' VALUES (null, 'a', 'b', '12', '12')";
         $stmnt = $dbh->prepare($sqlInsertar);
-        $stmnt->execute();
+        //$stmnt->execute();
 
+
+        if (mysqli_query($dbh, $sqlInsertar)) {
+            echo "New record created successfully";
+        } else {
+                echo "<h1>Error: </h1>" . $sqlInsertar . "<br>" . mysqli_error($dbh) . "<hr>";
+        }
+
+        /*
         echo "Ultimo id " . $dbh->lastInsertId();
 
         //Forma 1 query
@@ -93,4 +101,4 @@
         $dbh = null;//Cierro la conexion
         echo "<br>conexion cerrada";
     }
-    
+    */
