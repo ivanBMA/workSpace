@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Añadir una columna a la tabla fecha
+        insertar 5 filas con bindParam
+        insertar 5 filas con bindValues
+        Los datos a insertar se recogeran de un formulario que se realizar y rellenar con los datos
+        el formato a insertar en la fecha -> 5/10/2023
+        `ID`, `Name`, `Adress`, `age`, `telephone`
+    -->
+
+    <form action="../bdInsertar.php" method="post">
+        
+        <label for="">nombre</label>
+        <input type="text" name="nombre" id="">
+        <br>
+        <label for="">direccion</label>
+        <input type="text" name="direccion" id="">
+        <br>
+        <label for="">años</label>
+        <input type="date" name="años" id="">
+        <br>
+        <label for="">telefhono</label>
+        <input type="text" name="telefhono" id="">
+
+        <input type="submit" name="envio" value="envio">
+    </form>
+
+    <a href="mostrarBase.php">mostrar Base datos</a>
+    
+</body>
+</html>
