@@ -53,7 +53,7 @@
                 echo "<h1>Error: </h1>" . $sqlInsertar . "<br>" . mysqli_error($dbh) . "<hr>";
         }
 
-        /*
+        
         echo "Ultimo id " . $dbh->lastInsertId();
 
         //Forma 1 query
@@ -101,4 +101,4 @@
         $dbh = null;//Cierro la conexion
         echo "<br>conexion cerrada";
     }
-    */
+    
