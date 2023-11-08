@@ -1,4 +1,6 @@
 <?php
+  
+    /*
     require_once "Controller.php";
     $app = new Controller();
     //http://mvc.local?method=[index|show]&id?[id_usuario]
@@ -20,7 +22,7 @@
     }
 
 
-    /*
+    
     echo "<h2>Prueba recuperacion</h2>";
     var_dump( User::all());
     echo "<hr>";
