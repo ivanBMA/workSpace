@@ -10,16 +10,15 @@
             $ID = $_POST["ID"];
 
             //Esto esta mirando a demo no a cerbezaTown por que lo estaba haciendo en clase.
-            $sql2 = "DELETE FROM testclient WHERE ID = $ID;";
+            $sql2 = "DELETE FROM cerveza WHERE ID = $ID;";
             $statement2 = $dbh->prepare($sql2);
 
 
             $statement2->execute();
-            echo "<h1>Se elimino Correctamente</h1>";
-            echo "<a href='ejercicioClientes1.html'>regresar</a>";
+            header("Location: mostrarBase.php");
         }else {
             echo "<h1>No envio nada</h1>";
-            echo "<a href='ejercicioClientes1.html'>regresar</a>";
+            echo "<a href='insertar.html'>regresar</a>";
         }
 
 

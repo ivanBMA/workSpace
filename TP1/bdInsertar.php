@@ -30,11 +30,11 @@
             $statement2->bindParam(7,$RutaImagen);
 
             $statement2->execute();
-            echo "<h1>Se inserto Correctamente</h1>";
-            echo "<a href='ejercicioClientes1.html'>regresar</a>";
+            header("Location: mostrarBase.php");
+
         }else {
             echo "<h1>No envio nada</h1>";
-            echo "<a href='ejercicioClientes1.html'>regresar</a>";
+            echo "<a href='insertar.php'>regresar</a>";
         }
 
 

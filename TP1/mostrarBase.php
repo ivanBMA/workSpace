@@ -1,33 +1,85 @@
-<?php
-    require "bdcon.php";
-    echo "<h2>Bbbdd con PHP</h2>";
-
-
-    try {
-        $dbh = new PDO(DSN,USERNAME,PASSWORD);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);//<-----
-        $sqlA = "SELECT * FROM cerveza ";
-        echo "<h2>consulta Ejercicio 1</h2>";
-        $registersA = $dbh->query($sqlA);
-        $contador = 0;
-        foreach ($registersA as $row) {
-            echo "ID :" . $row["ID"];
-            echo "| Nombre :" . $row["Nombre"];
-            echo "| GraduacionAlcohol " . $row["GraduacionAlco"];
-            echo "| Pais " . $row["Pais"];
-            echo "| Pais " . $row["RutaImagen"];
-            echo "| Precio " . $row["Precio"] . "<br><hr>";
-            $contador++; 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mosaico{
+            float: left;
+            width: 30%;
+            border:solid 2px black;
+            margin-left:2%;
+            margin-top:2%;
+            height: 200px;
+            
         }
-        
-        echo "<h2>Filas devueltas ".$contador." </h2>";
-        echo "<a href='ejercicioClientes1.html'>regresar</a>";
-        
+        #abajo{
+            float: left;
+            width: 100%;
+        }
+        img{
+            float:rigth;
+            width: 45%;
+            height: 100%;
+            border-left:solid 2px black;
+        }
+        .liMostrar{
+            float: left;
+            width: 50%;
+            margin-top:4%;
+            margin-left:5%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    }catch (Exception $ex) {
-        echo "Fallo en la conexion : " . $ex->getMessage();
-    }finally{
-        $dbh = null;//Cierro la conexion
-        echo "<br>conexion cerrada";
-    }
+        }
+        section{
+            float: left;
+            width: 100%;
+            margin-bottom: 2%;
+
+        }
+    </style>
     
+</head>
+<body>
+    
+    <?php
+        require "header.html";
+        require "bdcon.php";
+
+        echo "<section>";
+        try {
+            $dbh = new PDO(DSN,USERNAME,PASSWORD);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);//<-----
+            $sqlA = "SELECT * FROM cerveza ";
+            $registersA = $dbh->query($sqlA);
+            $contador = 0;
+            echo "<ul>";
+            foreach ($registersA as $row) {
+                echo "<div class='mosaico'>";
+                echo "<li class='liMostrar'>ID :" . $row["ID"] . "</li>";
+                echo "<li class='liMostrar'> Nombre :" . $row["Nombre"] . "</li>";
+                echo "<li class='liMostrar'> Graduacion de Alcohol: " . $row["GraduacionAlco"] . "%</li>";
+                echo "<li class='liMostrar'> Pais: " . $row["Pais"] . "</li>";
+                echo "<li class='liMostrar'> Precio: " . $row["Precio"] . "€</li>";
+                $contador++;
+                echo "<img src='$row[RutaImagen]' alt=''>";
+                echo "</div>";
+
+            }
+            echo "</ul>";
+            
+            
+
+        }catch (Exception $ex) {
+            echo "Fallo en la conexion : " . $ex->getMessage();
+        }finally{
+            $dbh = null;//Cierro la conexion
+        }
+        echo "</section>";
+        require_once "footer.html";
+
+    ?>
+    
+</body>
+</html>
