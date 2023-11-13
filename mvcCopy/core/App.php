@@ -1,4 +1,5 @@
 <?php
+    namespace Core;
 /*
 http://mvc.local/user/index
 http://mvc.local/index.php?url=user/index
@@ -17,9 +18,10 @@ la peticion get:
             //Obtener controlador
             $controllerName = array_shift($arguments);//array_shift -> quita el primer elemento del array
             $controllerName = ucwords($controllerName) . "Controller"; //pone la primeta letra en mayusculas
+
             
             //Tranformacion para el metodos
-            conunt($arguments) ? $method = array_shift($arguments) : $method = "index";//lo mismo
+            count($arguments) ? $method = array_shift($arguments) : $method = "index";//lo mismo
             //$method = conunt($arguments) ?  array_shift($arguments) : $method = "index";//lo mismo
             //$edad = rand(1,99);numero aleatorio
             //echo $edad >= 17 ? "adulto" : "menor";
@@ -34,6 +36,7 @@ la peticion get:
                 die("AdiossSsSSssS");
             }
             //Crear instancia del controlador  y llamar al metodo
+            $controllerName = "\\App\\Controllers\\" . $controllerName;
             $controllerObject = new $controllerName;
             //Verificar si existe el metodo de la peticion
             if (method_exists($controllerObject,$method)) {

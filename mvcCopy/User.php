@@ -1,4 +1,10 @@
 <?php
+    namespace USERA;
+
+    function hola(){
+      echo "holaa";
+    }
+
     class User {
         const USERS = [
             array(1,"pedro"),
@@ -17,4 +23,6 @@
         public static function find($id){
             return User::USERS[$id - 1];
         }//find
+
+        
     }

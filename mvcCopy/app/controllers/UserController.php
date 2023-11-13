@@ -1,10 +1,14 @@
 <?php
+ namespace App\Controllers;
+
     class UserController {
-        function __construct(){
+         function __construct(){
             echo "<br>Contruyebdi USER controller ....";
         }
-        function index(){
-            echo "<br> En el INDEX de USER";
+        static function index(){
+            require "../views/user/header.php";
+            require "../views/user/footer.php";
+
         }
 
         function show(){

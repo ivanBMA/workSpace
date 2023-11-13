@@ -1,4 +1,5 @@
 <?php
+    namespace ControllerA;
     require_once "User.php";
     class Controller {
         //Recupera todos los usuarios.
