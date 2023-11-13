@@ -81,8 +81,10 @@
 
 
     <section>
-        <form action="bdInsertar.php" method="post">
-            
+        <form action="bdActualizar.php" method="post">
+            <label for="">ID</label>
+            <input type="text" name="ID" id="">
+            <br>
             <label for="">Nombre</label>
             <input type="text" name="Nombre" id="">
             <br>
@@ -99,16 +101,12 @@
             <input type="number" name="Precio" id="">
             <br>
             <label for="">imagen</label>
-            <input type="file" name="RutaImagen" id="">
-            <!--
-                <select name="RutaImagen" id="" >
-                    <option value="../../img/rubia.jpg">Rubia</option>
-                    <option value="../../img/tostada.jpg">Tostada</option>
-                    <option value="../../img/rubia.jpg">A</option>
-                    <option value="../../img/rubia.jpg">B</option>
-                </select>
-            -->
-
+            <select name="RutaImagen" id="" >
+                <option value="../../img/rubia.jpg">Rubia</option>
+                <option value="../../img/tostada.jpg">Tostada</option>
+                <option value="../../img/rubia.jpg">A</option>
+                <option value="../../img/rubia.jpg">B</option>
+            </select>
             <br>
             <input id="botonEnvio" type="submit" name="envio" value="envio">
         </form>
