@@ -6,8 +6,7 @@
             echo "<br>Contruyebdi USER controller ....";
         }
         static function index(){
-            require "../views/user/header.php";
-            require "../views/user/footer.php";
+            require "../views/indexUser.php";
 
         }
 

@@ -40,7 +40,7 @@
         $statement2->execute();
 
         //Tiene que llamarse igual que en values
-        /*
+        /*param modifica el valor incluso despues de declararlo
         $statement->bindParam(":ID",$id);
         $statement->bindParam(":Name",$nombre);
         $statement->bindParam(":Adress",$direccion);

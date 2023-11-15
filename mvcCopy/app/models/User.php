@@ -1,6 +1,9 @@
 <?php
+    namespace App\Models;
+    require "../core/Model.php";
+    use ;
 
-    class User {
+    class User extends Model {
         const USERS = [
             array(1,"pedro"),
             array(7,"elena"),
@@ -20,4 +23,4 @@
         }//find
 
         
-    }
+    }//Fin clase
