@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0064)https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+   <head> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -26,7 +26,41 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Index user</h1>
+      <br>
+      <br>
+      <br>
+
+      <?php 
+        //print_r($users);
+
+       
+        echo "<table class='table'>";
+        echo "<tr><td class='bg-info'>ID </td>";
+          echo "<td class='bg-info'> name </td>";
+          echo "<td class='bg-info'> surname </td>";
+          echo "<td class='bg-info'> email </td>";
+          echo "<td class='bg-info'> birthdate </td>";
+          echo "<td class='bg-info'> password </td>";
+          echo "<td class='bg-info'> active </td>";
+          echo "<td class='bg-info'> admin </td>";
+          echo "<td class='bg-info'>  </td></tr>";
+        foreach ($users as $row) {
+          echo "<tr><td> " . $row->id . "</td>";
+          echo "<td>  " . $row->name . "</td>";
+          echo "<td>  " . $row->surname . "</td>";
+          echo "<td>  " . $row->email . "</td>";
+          echo "<td>  " . $row->birthdate . "</td>";
+          echo "<td>  " . $row->password . "</td>";
+          echo "<td>  " . $row->active . "</td>";
+          echo "<td>  " . $row->admin . "</td>";
+          echo "<td><a href='/user/show/'>  " . $row->id . " Ver mas </a></td></tr>";
+
+        }
+        echo "</table>";
+
+        
+      ?>
+
      </main>
 
      <?php
