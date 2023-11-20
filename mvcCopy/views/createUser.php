@@ -12,10 +12,10 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="estilo/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -30,36 +30,31 @@
       <br>
       <br>
 
-      <?php 
-        //print_r($users);
+        <form action="/user/store/" method="post">
 
-       
-        echo "<table class='table'>";
-        echo "<tr><td class='bg-info'>ID </td>";
-          echo "<td class='bg-info'> name </td>";
-          echo "<td class='bg-info'> surname </td>";
-          echo "<td class='bg-info'> email </td>";
-          echo "<td class='bg-info'> birthdate </td>";
-          echo "<td class='bg-info'> password </td>";
-          echo "<td class='bg-info'> active </td>";
-          echo "<td class='bg-info'> admin </td>";
-          echo "<td class='bg-info'>  </td></tr>";
-        foreach ($users as $row) {
-          echo "<tr><td> " . $row->id . "</td>";
-          echo "<td>  " . $row->name . "</td>";
-          echo "<td>  " . $row->surname . "</td>";
-          echo "<td>  " . $row->email . "</td>";
-          echo "<td>  " . $row->birthdate . "</td>";
-          echo "<td>  " . $row->password . "</td>";
-          echo "<td>  " . $row->active . "</td>";
-          echo "<td>  " . $row->admin . "</td>";
-          echo "<td><a href='/user/show/$row->id '>   Ver mas </a></td></tr>";
+            <label for="">name</label>
+            <input type="text" name="name" id="">
+            <br>
+            <label for="">surname</label>
+            <input type="text" name="surname" id="">
+            <br>
+            <label for="">email </label>
+            <input type="text" name="email " id="">
+            <br>
+            <label for="">birthdate</label>
+            <input type="date" name="birthdate" id="">
+            <br>
+            <label for="">password</label>
+            <input type="text" name="password" id="">
+            <br>
+            <label for="">active</label>
+            <input type="number" name="active" id="">
+            <br>
+            <label for="">admin</label>
+            <input type="number" name="admin" id="">
 
-        }
-        echo "</table>";
-
-        
-      ?>
+            <input type="submit" value="envio">
+        </form>
 
      </main>
 

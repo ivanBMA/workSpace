@@ -1,5 +1,7 @@
 <?php
-  
+ /*
+die("aqui");
+
  require "../core/App.php";
  $app = new Core\App();
  
@@ -7,7 +9,7 @@
  //\App\Controllers\UserController::index();
   
   
-  /*
+ 
     require_once "Controller.php";
     
     $app = new Controller();

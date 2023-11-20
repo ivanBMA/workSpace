@@ -12,10 +12,10 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="estilo/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -31,9 +31,6 @@
       <br>
 
       <?php 
-        //print_r($users);
-
-       
         echo "<table class='table'>";
         echo "<tr><td class='bg-info'>ID </td>";
           echo "<td class='bg-info'> name </td>";
@@ -44,18 +41,17 @@
           echo "<td class='bg-info'> active </td>";
           echo "<td class='bg-info'> admin </td>";
           echo "<td class='bg-info'>  </td></tr>";
-        foreach ($users as $row) {
-          echo "<tr><td> " . $row->id . "</td>";
-          echo "<td>  " . $row->name . "</td>";
-          echo "<td>  " . $row->surname . "</td>";
-          echo "<td>  " . $row->email . "</td>";
-          echo "<td>  " . $row->birthdate . "</td>";
-          echo "<td>  " . $row->password . "</td>";
-          echo "<td>  " . $row->active . "</td>";
-          echo "<td>  " . $row->admin . "</td>";
-          echo "<td><a href='/user/show/$row->id '>   Ver mas </a></td></tr>";
+        
+          echo "<tr><td> " . $userA->id . "</td>";
+          echo "<td>  " . $userA->name . "</td>";
+          echo "<td>  " . $userA->surname . "</td>";
+          echo "<td>  " . $userA->email . "</td>";
+          echo "<td>  " . $userA->birthdate . "</td>";
+          echo "<td>  " . $userA->password . "</td>";
+          echo "<td>  " . $userA->active . "</td>";
+          echo "<td>  " . $userA->admin . "</td>";
 
-        }
+        
         echo "</table>";
 
         

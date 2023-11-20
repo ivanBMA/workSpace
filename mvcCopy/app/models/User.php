@@ -23,14 +23,35 @@
         //@retudn Un usuario en particular
         //@param $id
         public static function find($id){
-            $sql = "SELECT * FROM users WHERE id = $id";
-            $dbh = User::db();//self::db();
-            $statement = $dbh->query($sql);
-            return $statement;
+            $dbh = self::db();//self::db();
+            $sql = "SELECT * FROM users WHERE id = :id";
+            $statement = $dbh->prepare($sql);
+
+            $statement->bindValue(":id",$id);
+            $statement->execute();
+
+            $statement->setFetchMode(PDO::FETCH_CLASS,User::class);
+            $user = $statement->fetch(PDO::FETCH_CLASS);
+
+            return $user;
         }//find
 
         public static function insert(){
-            echo "<br>insertando un registro";
+            $dbh = self::db();//self::db();
+            $sql2 = "INSERT INTO `users` (`id`, `name`, `surname`, `email `, `birthdate`, `password`, `active`, `admin`) 
+            VALUES(?,?,?,?,?,?,?,?)";
+            $statement2 = $dbh->prepare($sql2);
+
+            $statement2->bindParam(1,$user->id);            
+            $statement2->bindParam(2,$user->name);
+            $statement2->bindParam(3,$user->surname);
+            $statement2->bindParam(4,$user->email);
+            $statement2->bindParam(5,$user->birthdate);
+            $statement2->bindParam(6,$user->password);
+            $statement2->bindParam(7,$user->active);
+            $statement2->bindParam(8,$user->admin);
+            
+            return $statement2->execute();
         }//find
 
         public static function save($id){
