@@ -29,10 +29,13 @@
       <br>
       <br>
       <br>
+    <h1>Actualizar</h1>
+    <hr>
+        <form action="/user/updateB/" method="post">
 
-        <form action="/user/store/" method="post">
-
-            <label for="">name</label>
+            <label for="">id del usuario que desea actualizar</label>
+            <input type="text" name="id" id="">
+            <br><label for="">name</label>
             <input type="text" name="name" id="">
             <br>
             <label for="">surname</label>
