@@ -36,26 +36,44 @@
             return $user;
         }//find
 
-        public static function insert(){
+        public function insert(){
             $dbh = self::db();//self::db();
-            $sql2 = "INSERT INTO `users` (`id`, `name`, `surname`, `email `, `birthdate`, `password`, `active`, `admin`) 
+            $sql2 = "INSERT INTO `users` (`id`, `name`, `surname`, `email`, `birthdate`, `password`, `active`, `admin`) 
             VALUES(?,?,?,?,?,?,?,?)";
             $statement2 = $dbh->prepare($sql2);
+            $nulo = null;
 
-            $statement2->bindParam(1,$user->id);            
-            $statement2->bindParam(2,$user->name);
-            $statement2->bindParam(3,$user->surname);
-            $statement2->bindParam(4,$user->email);
-            $statement2->bindParam(5,$user->birthdate);
-            $statement2->bindParam(6,$user->password);
-            $statement2->bindParam(7,$user->active);
-            $statement2->bindParam(8,$user->admin);
+            $statement2->bindParam(1,$nulo);            
+            $statement2->bindParam(2,$this->name);
+            $statement2->bindParam(3,$this->surname);
+            $statement2->bindParam(4,$this->email);
+            $statement2->bindParam(5,$this->birthdate);
+            $statement2->bindParam(6,$this->password);
+            $statement2->bindParam(7,$this->active);
+            $statement2->bindParam(8,$this->admin);
             
             return $statement2->execute();
         }//find
 
-        public static function save($id){
-            echo "<br>ACtualizo un registro";
+        public function save(){
+            $dbh = self::db();//self::db();
+            $sql2 = "UPDATE  users SET name = ?,surname = ?, email = ?, birthdate = ?, password = ?, active = ?, admin = ? 
+            WHERE ID = ?";
+            $statement2 = $dbh->prepare($sql2);
+            $nulo = null;
+
+            $statement2->bindParam(1,$this->name);
+            $statement2->bindParam(2,$this->surname);
+            $statement2->bindParam(3,$this->email);
+            $statement2->bindParam(4,$this->birthdate);
+            $statement2->bindParam(5,$this->password);
+            $statement2->bindParam(6,$this->active);
+            $statement2->bindParam(7,$this->admin);
+            $statement2->bindParam(8,$this->id);
+
+            
+            return $statement2->execute();
+
         }//find
 
         public static function delete($id){

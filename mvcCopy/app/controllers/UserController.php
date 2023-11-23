@@ -25,7 +25,7 @@
         function store(){
             $user = new User();
 
-            $user->id = null;
+            $user->id = NULL;
             $user->name = $_REQUEST["name"];
             $user->surname = $_REQUEST["surname"];
             $user->email = $_REQUEST["email"];
@@ -34,7 +34,44 @@
             $user->active = $_REQUEST["active"];
             $user->admin = $_REQUEST["admin"];
 
-            User::insert($user);
+            $user->insert();
+            header("Location: /user");
+        }
+
+        function updateA(){
+            require "../views/updateUser.php";
+        }
+
+        function updateB(){
+            $user = new User();
+            $id = $_REQUEST["id"];
+            $user = User::find($id);
+            
+            $user->id = $_REQUEST["id"];
+            if (!empty($_REQUEST["name"])) {
+                $user->name = $_REQUEST["name"];
+            }
+            if (!empty($_REQUEST["surname"])) {
+                $user->surname = $_REQUEST["surname"];
+            }
+            if (!empty($_REQUEST["email"])) {
+                $user->email = $_REQUEST["email"];
+            }
+            if (!empty($_REQUEST["birthdate"])) {
+                $user->birthdate = $_REQUEST["birthdate"];
+            }
+            if (!empty($_REQUEST["password"])) {
+                $user->password = $_REQUEST["password"];
+            }
+            if (!empty($_REQUEST["active"])) {
+                $user->active = $_REQUEST["active"];
+            }
+            if (!empty($_REQUEST["admin"])) {
+                $user->admin = $_REQUEST["admin"];
+            }
+
+            $user->save();
+            header("Location: /user");
         }
     }
     
