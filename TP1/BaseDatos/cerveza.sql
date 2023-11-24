@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 13:34:15
+-- Tiempo de generación: 24-11-2023 a las 12:08:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cerveza` (
   `ID` int(11) NOT NULL,
-  `Nombre` text NOT NULL,
-  `Tipo` text NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Tipo` varchar(10) NOT NULL,
   `GraduacionAlco` int(11) NOT NULL,
-  `Pais` text NOT NULL,
+  `Pais` varchar(60) NOT NULL,
   `Precio` int(11) NOT NULL,
-  `RutaImagen` text NOT NULL
+  `RutaImagen` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,17 +42,15 @@ CREATE TABLE `cerveza` (
 --
 
 INSERT INTO `cerveza` (`ID`, `Nombre`, `Tipo`, `GraduacionAlco`, `Pais`, `Precio`, `RutaImagen`) VALUES
-(3, 'a', 'a', 2, 'a', 3, '../../img/tostada.jpg'),
-(5, 'actualizadaB', 'maña', 69, 'EEUU', 15, '../../img/rubia.jpg'),
-(6, 'a', 'a', 3, 'a', 3, '../../img/rubia.jpg'),
-(7, 'Tostadeitor', 'tostada', 6, 'francia', 15, '../../img/tostada.jpg'),
-(8, 'Estrella Galicia', 'rubia', 4, 'España', 7, '../../img/rubia.jpg'),
-(9, 'bacaMan', 'tostada', 5, 'Portugal', 6, '../../img/tostada.jpg'),
-(10, 'a', 'a', 3, 'a', 3, '../../img/rubia.jpg'),
-(11, 'paco', 'tiene', 3, 'de', 2, '../../img/rubia.jpg'),
-(15, 'XXXXXXX', 'maña', 69, 'EEUU', 12, '../../img/tostada.jpg'),
-(16, 'XXXXXXX', 'maña', 69, 'EEUU', 12, 'img/tostada.jpg'),
-(17, 'yyyyyyyy', 'maña', 69, 'EEUU', 12, 'img/rubia.jpg');
+(36, 'a', 'Negra', 2, 'España', 2, 'img/rubia.jpg'),
+(37, 'Estrella Galicia', 'Tostada', 20, 'España', 4, 'img/rubia.jpg'),
+(38, 'Ambar', 'Tostada', 4, 'España', 14, 'img/tostada.jpg'),
+(39, 'aa', 'De trigo', 4, 'francia', 12, 'img/cerveza.png'),
+(40, 'Bandurria', 'Negra', 6, 'Alemania', 16, 'img/tostada.jpg'),
+(41, 'cervezaA', 'Rubia', 5, 'España', 5, 'img/rubia.jpg'),
+(42, 'Paco', 'De trigo', 5, 'francia', 6, 'img/cerveza.png'),
+(43, 'GallusDomesticus', 'Rubia', 7, 'francia', 4, 'img/rubia.jpg'),
+(44, 'canisFamiliaris', 'Negra', 6, 'francia', 4, 'img/cerveza.png');
 
 --
 -- Índices para tablas volcadas
@@ -72,7 +70,7 @@ ALTER TABLE `cerveza`
 -- AUTO_INCREMENT de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

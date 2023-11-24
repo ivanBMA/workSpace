@@ -61,6 +61,7 @@
                 echo "<div class='mosaico'>";
                 echo "<li class='liMostrar'>ID :" . $row["ID"] . "</li>";
                 echo "<li class='liMostrar'> Nombre :" . $row["Nombre"] . "</li>";
+                echo "<li class='liMostrar'> Tipo :" . $row["Tipo"] . "</li>";
                 echo "<li class='liMostrar'> Graduacion de Alcohol: " . $row["GraduacionAlco"] . "%</li>";
                 echo "<li class='liMostrar'> Pais: " . $row["Pais"] . "</li>";
                 echo "<li class='liMostrar'> Precio: " . $row["Precio"] . "€</li>";

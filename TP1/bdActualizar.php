@@ -13,7 +13,7 @@
             $GraduacionAlco = $_POST["GraduacionAlco"];
             $Pais = $_POST["Pais"];
             $Precio = $_POST["Precio"];
-            $RutaImagen = $_POST["RutaImagen"];
+            $RutaImagen = "img/" . $_POST["RutaImagen"];
 
             $sql2 = "UPDATE  cerveza SET Nombre = ?,Tipo = ?, GraduacionAlco = ?, Pais = ?, Precio = ?, RutaImagen = ? WHERE ID = ?";
             $statement2 = $dbh->prepare($sql2);

@@ -82,32 +82,38 @@
 
     <section>
         <form action="bdActualizar.php" method="post">
-            <label for="">ID</label>
-            <input type="text" name="ID" id="">
+            <label for="">Id </label>
+            <input type="number" name="ID" required>
             <br>
             <label for="">Nombre</label>
-            <input type="text" name="Nombre" id="">
+            <input type="text" name="Nombre" id="" required  maxlength="50" size="50" >
             <br>
+
             <label for="">Tipo</label>
-            <input type="text" name="Tipo" id="">
-            <br>
-            <label for="">GraduacionAlco</label>
-            <input type="number" name="GraduacionAlco" id="">
-            <br>
-            <label for="">Pais</label>
-            <input type="text" name="Pais" id="">
-            <br>
-            <label for="">Precio</label>
-            <input type="number" name="Precio" id="">
-            <br>
-            <label for="">imagen</label>
-            <select name="RutaImagen" id="" >
-                <option value="../../img/rubia.jpg">Rubia</option>
-                <option value="../../img/tostada.jpg">Tostada</option>
-                <option value="../../img/rubia.jpg">A</option>
-                <option value="../../img/rubia.jpg">B</option>
+            <select name="Tipo" id="" >
+                <option value="Tostada">Tostada</option>
+                <option value="Rubia">Rubia</option>
+                <option value="De trigo">De trigo</option>
+                <option value="Negra">Negra</option>
             </select>
             <br>
+
+            <label for="">GraduacionAlco</label>
+            <input type="number" name="GraduacionAlco" required id="" min="0">
+            <br>
+
+            <label for="">Pais</label>
+            <input type="text" name="Pais" id="" required maxlength="60" size="60">
+            <br>
+
+            <label for="">Precio</label>
+            <input type="number" name="Precio" required id="" min="0">
+            <br>
+
+            <label for="">imagen</label>
+            <input type="file" name="RutaImagen" accept=".jpg, .png" required id="" maxlength="100" size="100" >
+            <br>
+            
             <input id="botonEnvio" type="submit" name="envio" value="envio">
         </form>
 
