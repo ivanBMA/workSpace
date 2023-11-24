@@ -43,7 +43,10 @@
           echo "<td class='bg-info'> password </td>";
           echo "<td class='bg-info'> active </td>";
           echo "<td class='bg-info'> admin </td>";
+          echo "<td class='bg-info'>  </td>";
+          echo "<td class='bg-info'>  </td>";
           echo "<td class='bg-info'>  </td></tr>";
+
         foreach ($users as $row) {
           echo "<tr><td> " . $row->id . "</td>";
           echo "<td>  " . $row->name . "</td>";
@@ -53,7 +56,9 @@
           echo "<td>  " . $row->password . "</td>";
           echo "<td>  " . $row->active . "</td>";
           echo "<td>  " . $row->admin . "</td>";
-          echo "<td><a href='/user/show/$row->id '>   Ver mas </a></td></tr>";
+          echo "<td><a href='/user/show/$row->id '> mas </a></td>";
+          echo "<td><a href='/user/updateA/$row->id'>   update </a></td>";
+          echo "<td><a href='/user/borrar/$row->id '>   Borrar </a></td></tr>";
 
         }
         echo "</table>";

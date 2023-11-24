@@ -76,8 +76,14 @@
 
         }//find
 
-        public static function delete($id){
-            echo "<br>Borrando un registro";
+        public function delete(){
+            $dbh = self::db();//self::db();
+            $sql2 = "DELETE FROM users WHERE ID = ?";
+            $statement2 = $dbh->prepare($sql2);
+
+            $statement2->bindParam(1,$this->id);
+            
+            return $statement2->execute();
         }//find
 
         
