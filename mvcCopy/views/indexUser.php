@@ -59,6 +59,7 @@
           echo "<td><a href='/user/show/$row->id '> mas </a></td>";
           echo "<td><a href='/user/updateA/$row->id'>   update </a></td>";
           echo "<td><a href='/user/borrar/$row->id '>   Borrar </a></td></tr>";
+          //onclick="return confirm('Estas seguro de borrarlo?')"
 
         }
         echo "</table>";

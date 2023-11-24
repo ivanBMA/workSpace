@@ -1,0 +1,12 @@
+{
+    "name": "daw217/mvc-copy",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models/"
+        }
+    }
+
+}
