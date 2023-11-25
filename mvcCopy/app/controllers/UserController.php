@@ -73,5 +73,14 @@
             $user->save();
             header("Location: /user");
         }
+
+        function borrar($args){
+            $id = (int)$args[0];
+            $userA = new User();
+            $userA->id = $id;
+            $userA->delete();
+            header("Location: /user");
+        }
+
     }
     
