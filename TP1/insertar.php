@@ -77,8 +77,13 @@
     
     <?php
         require "header.html";
+        /*
+            Aqui solo hay una tabla donde el usuario introduce los datos y se 
+            reenvian a bdInsertar donde se recibiran los datos y se ejecutara
+            la sentencia sql.
+        */
     ?>
-
+    
 
     <section>
         <form action="bdInsertar.php" method="post">
@@ -105,15 +110,6 @@
             <br>
             <label for="">imagen</label>
             <input type="file" name="RutaImagen" accept=".jpg, .png" required id="" maxlength="100" size="100" >
-            <!--s
-                <select name="RutaImagen" id="" >
-                    <option value="../../img/rubia.jpg">Rubia</option>
-                    <option value="../../img/tostada.jpg">Tostada</option>
-                    <option value="../../img/rubia.jpg">A</option>
-                    <option value="../../img/rubia.jpg">B</option>
-                </select>
-            -->
-
             <br>
             <input id="botonEnvio" type="submit" name="envio" value="envio">
         </form>

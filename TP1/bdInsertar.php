@@ -11,13 +11,13 @@
 
         if(isset($_POST["envio"]) && !empty($_POST["envio"])){
             echo "Hola";
-            $id = null;
+            $id = null;//El id se envia null por que es autoIncremental.
             $nombre = $_POST["Nombre"];
             $Tipo = $_POST["Tipo"];
             $GraduacionAlco = $_POST["GraduacionAlco"];
             $Pais = $_POST["Pais"];
             $Precio = $_POST["Precio"];
-            $RutaImagen = "img/" . $_POST["RutaImagen"];
+            $RutaImagen = "img/" . $_POST["RutaImagen"];//se añade img/ por que hay se encuentran las imagenes.
 
 
 
@@ -30,6 +30,8 @@
             $statement2->bindParam(7,$RutaImagen);
 
             $statement2->execute();
+            //una vez inserta la nueva fila redirecciona para que el usuario vea 
+            //que se ha insertado con exito
             header("Location: mostrarBase.php");
 
         }else {

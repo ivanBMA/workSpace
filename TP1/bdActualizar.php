@@ -1,19 +1,49 @@
 <?php
     require "bdcon.php";
+    require "buscarParaActualizar.php";
 
     try {
         $dbh = new PDO(DSN,USERNAME,PASSWORD);
         $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        
+        /*
+            se reciben los datos a cambiar despues con el id recibido se busca
+            la fila existente se recogen los datos anteriores y se actualizan con solo los
+            datos nuevos y si no se reciven datos nuevos en algun valor se queda como estaba.
+        */
 
         if(isset($_POST["envio"]) && !empty($_POST["envio"])){
             $id = $_POST["ID"];
-            $nombre = $_POST["Nombre"];
-            $Tipo = $_POST["Tipo"];
-            $GraduacionAlco = $_POST["GraduacionAlco"];
-            $Pais = $_POST["Pais"];
-            $Precio = $_POST["Precio"];
-            $RutaImagen = "img/" . $_POST["RutaImagen"];
+            $registrosAnteriores =  debolverFila($id);
+
+            foreach ($registrosAnteriores as $row) {
+                
+                $nombre =  $row["Nombre"]; 
+                $Tipo = $row["Tipo"];
+                $GraduacionAlco =  $row["GraduacionAlco"];
+                $Pais = $row["Pais"]; 
+                $Precio = $row["Precio"]; 
+                $RutaImagen = $row["RutaImagen"];
+            }
+
+            //Compruebo que no esten vacios antes de reasignar.
+            if (!empty($_POST["Nombre"])) {
+                $nombre = $_POST["Nombre"];
+            }
+            if (!empty($_POST["Tipo"])) {
+                $Tipo = $_POST["Tipo"];
+            }
+            if (!empty($_POST["GraduacionAlco"])) {
+                $GraduacionAlco = $_POST["GraduacionAlco"];
+            }
+            if (!empty($_POST["Pais"])) {
+                $Pais = $_POST["Pais"];
+            }
+            if (!empty($_POST["Precio"])) {
+                $Precio = $_POST["Precio"];
+            }
+            if (!empty($_POST["RutaImagen"])) {
+                $RutaImagen = "img/" . $_POST["RutaImagen"];
+            }
 
             $sql2 = "UPDATE  cerveza SET Nombre = ?,Tipo = ?, GraduacionAlco = ?, Pais = ?, Precio = ?, RutaImagen = ? WHERE ID = ?";
             $statement2 = $dbh->prepare($sql2);

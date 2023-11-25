@@ -5,11 +5,9 @@
         $dbh = new PDO(DSN,USERNAME,PASSWORD);
         $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-
+        //se recibe el id de la fila a borrar y despues se redirecciona para que el usuario vea el resultado.
         if(isset($_POST["envio"]) && !empty($_POST["envio"])){
             $ID = $_POST["ID"];
-
-            //Esto esta mirando a demo no a cerbezaTown por que lo estaba haciendo en clase.
             $sql2 = "DELETE FROM cerveza WHERE ID = $ID;";
             $statement2 = $dbh->prepare($sql2);
 

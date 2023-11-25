@@ -77,6 +77,7 @@
     
     <?php
         require "header.html";
+        //Es muy parecido a insertar solo baria en que el id se usa para encontrar la fila no para insertarla
     ?>
 
 
@@ -86,7 +87,7 @@
             <input type="number" name="ID" required>
             <br>
             <label for="">Nombre</label>
-            <input type="text" name="Nombre" id="" required  maxlength="50" size="50" >
+            <input type="text" name="Nombre" id=""   maxlength="50" size="50" >
             <br>
 
             <label for="">Tipo</label>
@@ -99,19 +100,19 @@
             <br>
 
             <label for="">GraduacionAlco</label>
-            <input type="number" name="GraduacionAlco" required id="" min="0">
+            <input type="number" name="GraduacionAlco" id="" min="0">
             <br>
 
             <label for="">Pais</label>
-            <input type="text" name="Pais" id="" required maxlength="60" size="60">
+            <input type="text" name="Pais" id="" maxlength="60" size="60">
             <br>
 
             <label for="">Precio</label>
-            <input type="number" name="Precio" required id="" min="0">
+            <input type="number" name="Precio" id="" min="0">
             <br>
 
             <label for="">imagen</label>
-            <input type="file" name="RutaImagen" accept=".jpg, .png" required id="" maxlength="100" size="100" >
+            <input type="file" name="RutaImagen" accept=".jpg, .png" id="" maxlength="100" size="100" >
             <br>
             
             <input id="botonEnvio" type="submit" name="envio" value="envio">
