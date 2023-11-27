@@ -86,5 +86,23 @@
             return $statement2->execute();
         }//find
 
+        public function setPassword($password){
+            $dbh = self::db();//self::db();
+            $password = password_hash($password,PASSWORD_BCRYPT);
+
+            $sql2 = "UPDATE users SET password = ? WHERE id = ?";
+            $statement2 = $dbh->prepare($sql2);
+
+            $statement2->bindParam(1,$password);
+            $statement2->bindParam(2,$this->id);
+
+            
+            return $statement2->execute();
+        }//find
+
+        public function passwordVerify($password,$user){
+            return password_verify($password, $user->password);
+        }//find
+
         
     }//Fin clase

@@ -45,6 +45,7 @@
           echo "<td class='bg-info'> admin </td>";
           echo "<td class='bg-info'>  </td>";
           echo "<td class='bg-info'>  </td>";
+          echo "<td class='bg-info'>  </td>";
           echo "<td class='bg-info'>  </td></tr>";
 
         foreach ($users as $row) {
@@ -58,10 +59,13 @@
           echo "<td>  " . $row->admin . "</td>";
           echo "<td><a href='/user/show/$row->id '> mas </a></td>";
           echo "<td><a href='/user/updateA/$row->id'>   update </a></td>";
-          echo "<td><a href='/user/borrar/$row->id '>   Borrar </a></td></tr>";
+          echo "<td><a href='/user/borrar/$row->id'>   borrar </a></td>";
+
+          echo "<td><a href='/user/contraseñaDefault/$row->id'> resetear contraseña </a></td></tr>";
           //onclick="return confirm('Estas seguro de borrarlo?')"
 
         }
+        echo "<tr><td><a href='/user/allContraseñaDefault/'> resetear todas las contraseñas </a></td><tr>";
         echo "</table>";
 
         

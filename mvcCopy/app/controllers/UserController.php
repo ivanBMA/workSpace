@@ -82,5 +82,29 @@
             header("Location: /user");
         }
 
+        function contraseñaDefault($args){
+            $id = (int)$args[0];
+            $userA = new User();
+            $userA = User::find($id);
+            //$userA->setPassword($userA->password);//hay que enviar la contraseña
+            $userA->setPassword("paco");//hay que enviar la contraseña
+
+            header("Location: /user");
+        }
+
+        function allContraseñaDefault(){
+            $usuarios = User::all();
+            $numeroUsuarios = count($usuarios);
+
+            for ($i=0; $i <  $numeroUsuarios ; $i++) { 
+                $user = User::find($usuarios[$i]->id);
+                echo "esto "  . $user->password .  "<br><hr>";
+                //$user->setPassword($user->password);
+                $user->setPassword("juan");
+            }
+
+            header("Location: /user");
+        }
+
     }
     

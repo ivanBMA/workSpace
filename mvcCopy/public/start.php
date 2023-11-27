@@ -1,5 +1,5 @@
 <?php
-  require "vendor/autoload.json";
+  require "../vendor/autoload.php";
   //require "../core/App.php";
   use Core\App;
   $app = new App();
