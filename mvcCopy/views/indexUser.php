@@ -29,7 +29,7 @@
       <br>
       <br>
       <br>
-
+      <a href="/user/create">Crear un usuario nuevo</a>
       <?php 
         //print_r($users);
 
@@ -53,7 +53,7 @@
           echo "<td>  " . $row->name . "</td>";
           echo "<td>  " . $row->surname . "</td>";
           echo "<td>  " . $row->email . "</td>";
-          echo "<td>  " . $row->birthdate . "</td>";
+          echo "<td>  " . $row->birthdate->format('d/m/Y') . "</td>";
           echo "<td>  " . $row->password . "</td>";
           echo "<td>  " . $row->active . "</td>";
           echo "<td>  " . $row->admin . "</td>";
@@ -67,6 +67,8 @@
         }
         echo "<tr><td><a href='/user/allContraseñaDefault/'> resetear todas las contraseñas </a></td><tr>";
         echo "</table>";
+        echo "<a href='/user/crearPdf/'> crearPdf </a>";
+        
 
         
       ?>

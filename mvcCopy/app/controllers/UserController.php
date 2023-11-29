@@ -2,6 +2,7 @@
     namespace App\Controllers;
     require "../app/models/User.php";
     use App\Models\User;
+    use Dompdf\Dompdf;
 
     class UserController {
          function __construct(){
@@ -92,7 +93,7 @@
             header("Location: /user");
         }
 
-        function allContraseñaDefault(){
+        function allContraseñaDefault1(){
             $usuarios = User::all();
             $numeroUsuarios = count($usuarios);
 
@@ -104,6 +105,33 @@
             }
 
             header("Location: /user");
+        }
+
+        function allContraseñaDefault(){
+            $usuarios = User::all();
+
+            foreach ($usuarios as $usuario) {
+                $usuario->setPassword("juan");
+            }
+
+            header("Location: /user");
+        }
+
+        function crearPdf(){
+            //include_once "../vendor/autoload.php";
+            ob_start();
+            $ruta = "http://mvc.local/user";
+
+            echo file_get_contents($ruta);
+            $html = ob_get_clean();
+
+            $dompdf = new Dompdf();
+
+            $dompdf->loadHtml($html);
+            $dompdf->setPaper('A4','portrait');
+            $dompdf->render();
+            
+            $dompdf->stream("DetallesUsuario.pdf", ["Attachment" => false]);
         }
 
     }

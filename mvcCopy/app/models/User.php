@@ -3,18 +3,24 @@
     require "../core/Model.php";
     use Core\Model;
     use PDO;
+    use DateTime;
 
     class User extends Model {
+
+        public function __construct(){
+            $this->birthdate = DateTime::createFromFormat('Y-m-d', $this->birthdate);
+
+        }
 
         //@retur Array con los datos de los usuarios
         public static function all(){
             
             $sql = "SELECT * FROM users";
             $dbh = User::db();//self::db();
+
             $statement = $dbh->query($sql);
             $statement->setFetchMode(PDO::FETCH_CLASS,User::class);
-
-            $users = $statement->fetchAll(PDO::FETCH_CLASS);
+            $users = $statement->fetchAll(PDO::FETCH_CLASS,User::class);
 
             return $users;
             

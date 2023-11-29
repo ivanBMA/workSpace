@@ -1,6 +1,8 @@
 {
     "name": "daw217/mvc-copy",
-    "require": {},
+    "require": {
+        "dompdf/dompdf": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "core/",
