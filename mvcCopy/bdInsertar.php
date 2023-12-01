@@ -17,7 +17,7 @@
             $edad = $_POST["años"];
             $telefono = $_POST["telefhono"];
 
-
+            
             $statement2->bindParam(1,$id);
             $statement2->bindParam(2,$nombre);
             $statement2->bindParam(3,$direccion);
